@@ -14,52 +14,31 @@ struct Pokemon: Identifiable, Decodable {
     let height: Int
     let types: [PokemonType]
     let baseExp: Int
-    //    let sprites: String
+    var sprite: String {
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/\(id).svg"
+    }
 
     enum CodingKeys: String, CodingKey {
         case id, name, weight, height, types
         case baseExp = "base_experience"
+
     }
 
-    enum SpriteKeys: String, CodingKey {
-        case other
-    }
-
-    enum OtherKeys: String, CodingKey {
-        case dreamworld
-    }
-
-    enum DreamworldKeys: String, CodingKey {
-        case frontDefault = "front_default"
-    }
-
-    struct PokemonType: Decodable {
-        let slot: Int
-        let type: Data
-
-        struct Data: Decodable {
-            let name: String
-        }
-    }
-
-    struct PokemonStat: Decodable {
-        let base: Int
-        let stat: Data
-
-        enum CodingKeys: String, CodingKey {
-            case base = "base_stat"
-            case stat
-        }
-
-        struct Data: Decodable {
-            let name: String
-            let stat: StatName
-
-            enum StatName: String, Decodable {
-                case hp, attack, defense, speed
-            }
-        }
-
+    // MARK: - For test
+    init(
+        id: String,
+        name: String,
+        weight: Int,
+        height: Int,
+        types: [PokemonType],
+        baseExp: Int,
+    ) {
+        self.id = id
+        self.name = name
+        self.weight = weight
+        self.height = height
+        self.types = types
+        self.baseExp = baseExp
     }
 
 }
