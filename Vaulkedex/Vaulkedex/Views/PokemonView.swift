@@ -5,17 +5,17 @@
 //  Created by Stephen Sagarino on 8/10/25.
 //
 
+import SVGView
 import SwiftUI
 
 struct PokemonView: View {
     let pokemon: Pokemon
     init(_ pokemon: Pokemon) {
         self.pokemon = pokemon
-        print(pokemon.sprite)
     }
     var body: some View {
         VStack(spacing: 30) {
-            Image("charizard")
+            SVGView(contentsOf: URL(string: pokemon.sprite)!)
             Text(pokemon.name.capitalized)
                 .font(.title)
                 .fontWeight(.semibold)
@@ -118,4 +118,5 @@ struct PokemonView: View {
     )
 
     PokemonView(pokemon)
+
 }
