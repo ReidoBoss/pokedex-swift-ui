@@ -41,7 +41,7 @@ struct PokemonService {
             .request(url)
             .flatMap { (pokemonList: PokemonList) in
                 Publishers.MergeMany(
-                    pokemonList.result.compactMap {
+                    pokemonList.results.compactMap {
                         pokeData -> AnyPublisher<Pokemon, Error>? in
                         guard let detailURL = URL(string: pokeData.url) else {
                             return nil

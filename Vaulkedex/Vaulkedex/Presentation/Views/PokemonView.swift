@@ -13,16 +13,41 @@ struct PokemonView: View {
     init(_ pokemon: Pokemon) {
         self.pokemon = pokemon
     }
+
+    var gradient: RadialGradient {
+        .init(
+            colors: pokemon.types.map { $0.type.name.color },
+            center: .bottom,
+            startRadius: 0,
+            endRadius: 400
+        )
+    }
     var body: some View {
-        VStack(spacing: 30) {
-            SVGView(contentsOf: URL(string: pokemon.sprite)!)
-            Text(pokemon.name.capitalized)
-                .font(.title)
-                .fontWeight(.semibold)
-            types
-            metrics
-            stats
+        ZStack {
+            VStack(spacing: 30) {
+                pokemonPic
+                Text(pokemon.name.capitalized)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                types
+                metrics
+                stats
+            }
+        }.ignoresSafeArea(edges: .top)
+    }
+
+    var pokemonPic: some View {
+        ZStack {
+            gradient
+                .scaleEffect(3)
+                .opacity(0.4)
+
+            RemoteSVGView(url: URL(string: pokemon.sprite)!)
+                .padding(20)
+                .padding(.top, 40)
         }
+        .clipShape(RoundedRectangle(cornerRadius: 24))
+        .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 4)
     }
 
     var types: some View {
@@ -60,15 +85,23 @@ struct PokemonView: View {
         }
     }
 
+    var pokemonStats: [Pokemon.PokemonStat] {
+        pokemon.stats
+            .filter { stat in
+                stat.stat.name != .specialAttack
+                    && stat.stat.name != .specialDef
+            }
+    }
+
     var stats: some View {
         VStack {
             Text("Base Stats")
                 .fontWeight(.medium)
                 .font(.title)
-            ForEach(pokemon.stats) { stat in
+            ForEach(pokemonStats) { stat in
                 let pokeStat = stat.stat
                 HStack {
-                    Text(pokeStat.name.rawValue.uppercased())
+                    Text(pokeStat.title)
                         .foregroundStyle(.secondary)
                         .frame(width: 40)
                     StatBar(
@@ -108,7 +141,7 @@ struct PokemonView: View {
         .init(base: 100, stat: .init(name: .speed)),
     ]
     let pokemon: Pokemon = Pokemon(
-        id: "6",
+        id: 6,
         name: "charizard",
         weight: 905,
         height: 17,

@@ -8,7 +8,7 @@
 import Foundation
 
 struct PokemonList: Decodable {
-    let result: [Data]
+    let results: [Data]
 
     struct Data: Decodable {
         let name: String

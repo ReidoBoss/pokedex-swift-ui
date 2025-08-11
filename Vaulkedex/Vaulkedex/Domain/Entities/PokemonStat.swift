@@ -24,20 +24,35 @@ extension Pokemon {
         struct Data: Decodable {
             let name: StatName
 
+            var title: String {
+                switch name {
+                case .hp: "HP"
+                case .attack: "ATK"
+                case .specialAttack: "S-ATK"
+                case .specialDef: "S-DEF"
+                case .defense: "DEF"
+                case .speed: "SPD"
+                }
+            }
+
             var color: Color {
                 switch name {
                 case .hp: Color(.systemRed)
                 case .attack: Color(.systemYellow)
                 case .defense: Color(.systemCyan)
                 case .speed: Color(.systemTeal)
+                case .specialAttack: Color(.systemBrown)
+                case .specialDef: Color(.systemBlue)
                 }
             }
 
             enum StatName: String, Decodable {
                 case hp
-                case attack = "atk"
-                case defense = "def"
-                case speed = "spd"
+                case attack /*= "atk"*/
+                case specialAttack = "special-attack"
+                case specialDef = "special-defense"
+                case defense /*= "def"*/
+                case speed /*= "spd"*/
             }
         }
 

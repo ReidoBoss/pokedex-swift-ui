@@ -32,4 +32,10 @@ extension Container {
         }
     }
 
+    var pokemonViewModel: Factory<PokemonViewModel> {
+        self {
+            PokemonViewModel(pokemonUseCase: self.pokemonUseCase())
+        }
+    }
+
 }

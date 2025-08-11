@@ -8,7 +8,7 @@
 import Foundation
 
 struct Pokemon: Identifiable, Decodable {
-    let id: String
+    let id: Int
     let name: String
     let weight: Int
     let height: Int
@@ -27,7 +27,7 @@ struct Pokemon: Identifiable, Decodable {
 
     // MARK: - For test
     init(
-        id: String,
+        id: Int,
         name: String,
         weight: Int,
         height: Int,
