@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1D415E152E498AC50094F21C /* SVGView in Frameworks */ = {isa = PBXBuildFile; productRef = 1D415E142E498AC50094F21C /* SVGView */; };
+		1DFD86292E49E9A500600689 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 1DFD86282E49E9A500600689 /* Factory */; };
+		1DFD862B2E49E9A500600689 /* FactoryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1DFD862A2E49E9A500600689 /* FactoryKit */; };
+		1DFD862D2E49E9A500600689 /* FactoryTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 1DFD862C2E49E9A500600689 /* FactoryTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +30,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DFD862D2E49E9A500600689 /* FactoryTesting in Frameworks */,
+				1DFD862B2E49E9A500600689 /* FactoryKit in Frameworks */,
 				1D415E152E498AC50094F21C /* SVGView in Frameworks */,
+				1DFD86292E49E9A500600689 /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +77,9 @@
 			name = Vaulkedex;
 			packageProductDependencies = (
 				1D415E142E498AC50094F21C /* SVGView */,
+				1DFD86282E49E9A500600689 /* Factory */,
+				1DFD862A2E49E9A500600689 /* FactoryKit */,
+				1DFD862C2E49E9A500600689 /* FactoryTesting */,
 			);
 			productName = Vaulkedex;
 			productReference = 902A44A82E4216B0008E2A43 /* Vaulkedex.app */;
@@ -102,6 +111,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				1D415E132E498AC50094F21C /* XCRemoteSwiftPackageReference "SVGView" */,
+				1DFD86272E49E9A500600689 /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 902A44A92E4216B0008E2A43 /* Products */;
@@ -339,6 +349,14 @@
 				minimumVersion = 1.0.6;
 			};
 		};
+		1DFD86272E49E9A500600689 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -346,6 +364,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1D415E132E498AC50094F21C /* XCRemoteSwiftPackageReference "SVGView" */;
 			productName = SVGView;
+		};
+		1DFD86282E49E9A500600689 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DFD86272E49E9A500600689 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+		1DFD862A2E49E9A500600689 /* FactoryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DFD86272E49E9A500600689 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = FactoryKit;
+		};
+		1DFD862C2E49E9A500600689 /* FactoryTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DFD86272E49E9A500600689 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = FactoryTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
