@@ -5,10 +5,16 @@
 //  Created by Stephen Sagarino on 8/10/25.
 //
 
+import SwiftUI
+
 extension Pokemon {
-    struct PokemonStat: Decodable {
+    struct PokemonStat: Decodable, Identifiable {
         let base: Int
         let stat: Data
+
+        var id: String {
+            stat.name.rawValue
+        }
 
         enum CodingKeys: String, CodingKey {
             case base = "base_stat"
@@ -16,11 +22,22 @@ extension Pokemon {
         }
 
         struct Data: Decodable {
-            let name: String
-            let stat: StatName
+            let name: StatName
+
+            var color: Color {
+                switch name {
+                case .hp: Color(.systemRed)
+                case .attack: Color(.systemYellow)
+                case .defense: Color(.systemCyan)
+                case .speed: Color(.systemTeal)
+                }
+            }
 
             enum StatName: String, Decodable {
-                case hp, attack, defense, speed
+                case hp
+                case attack = "atk"
+                case defense = "def"
+                case speed = "spd"
             }
         }
 

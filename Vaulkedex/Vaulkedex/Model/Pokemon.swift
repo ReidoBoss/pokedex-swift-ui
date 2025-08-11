@@ -13,13 +13,14 @@ struct Pokemon: Identifiable, Decodable {
     let weight: Int
     let height: Int
     let types: [PokemonType]
+    let stats: [PokemonStat]
     let baseExp: Int
     var sprite: String {
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/\(id).svg"
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, name, weight, height, types
+        case id, name, weight, height, types, stats
         case baseExp = "base_experience"
 
     }
@@ -31,6 +32,7 @@ struct Pokemon: Identifiable, Decodable {
         weight: Int,
         height: Int,
         types: [PokemonType],
+        stats: [PokemonStat],
         baseExp: Int,
     ) {
         self.id = id
@@ -38,6 +40,7 @@ struct Pokemon: Identifiable, Decodable {
         self.weight = weight
         self.height = height
         self.types = types
+        self.stats = stats
         self.baseExp = baseExp
     }
 
