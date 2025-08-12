@@ -9,6 +9,29 @@ This project is intended **for educational purposes only**.
 
 ---
 
+## 📱 App Preview
+
+<table>
+<tr>
+<td>
+<img src="images/pokeapp.gif" alt="Pokedex App Preview" width="250"/>
+</td>
+<td>
+
+**Tech Stack**
+
+- 🛠 **Xcode** 16.4
+- 💻 **Swift** 5
+- 🎨 **SwiftUI**
+- 📦 **Factory** (Dependency Injection)
+- 🖼 **SVGView** (SVG Rendering)
+
+</td>
+</tr>
+</table>
+
+---
+
 ## 📚 Libraries Used
 
 1. [**SVGView**](https://github.com/exyte/SVGView)
