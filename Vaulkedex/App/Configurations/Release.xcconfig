@@ -1,0 +1,11 @@
+//
+//  Release.xcconfig
+//  Pokedex
+//
+//  Created by Stephen T. Sagarino Jr. on 8/12/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+POKE_API_BASE_URL=pokeapi.co/api/v2

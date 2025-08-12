@@ -10,7 +10,7 @@ import Foundation
 
 struct PokemonService {
 
-    private let baseApiUrl = "https://pokeapi.co/api/v2"
+    private let baseApiUrl = AppConfig.shared.pokeApiBaseUrl
 
     private let networkService: NetworkService
 
@@ -19,7 +19,14 @@ struct PokemonService {
     }
 
     func find(pokemon: String) -> AnyPublisher<Pokemon, Error> {
-        guard let url = URL(string: baseApiUrl + "/pokemon/\(pokemon)") else {
+        guard let baseApiUrl else {
+            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+        }
+        guard
+            let url = URL(
+                string: "https://" + baseApiUrl + "/pokemon/\(pokemon)"
+            )
+        else {
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }
         return
@@ -32,7 +39,14 @@ struct PokemonService {
 
     /// gets a list of pokemon
     func get() -> AnyPublisher<[Pokemon], Error> {
-        guard let url = URL(string: baseApiUrl + "/pokemon") else {
+        guard let baseApiUrl else {
+            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+        }
+        guard
+            let url = URL(
+                string: "https://" + baseApiUrl + "/pokemon"
+            )
+        else {
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }
 

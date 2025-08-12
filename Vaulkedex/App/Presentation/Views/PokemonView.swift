@@ -53,7 +53,7 @@ struct PokemonView: View {
     var types: some View {
         HStack {
             ForEach(pokemon.types) { pokemonType in
-                Image(pokemonType.type.name.rawValue)
+                Image(pokemonType.type.name.rawValue.capitalized)
                     .resizable()
                     .frame(width: 50, height: 50)
             }

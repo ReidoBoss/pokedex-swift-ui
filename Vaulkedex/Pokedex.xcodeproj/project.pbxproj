@@ -12,13 +12,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		902A44A82E4216B0008E2A43 /* Vaulkedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vaulkedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		902A44A82E4216B0008E2A43 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9062EED12E4AC69500B8D9C8 /* Pokedex-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pokedex-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		902A44AA2E4216B0008E2A43 /* Vaulkedex */ = {
+		902A44AA2E4216B0008E2A43 /* App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Vaulkedex;
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -39,7 +40,8 @@
 		902A449F2E4216B0008E2A43 = {
 			isa = PBXGroup;
 			children = (
-				902A44AA2E4216B0008E2A43 /* Vaulkedex */,
+				9062EED12E4AC69500B8D9C8 /* Pokedex-Info.plist */,
+				902A44AA2E4216B0008E2A43 /* App */,
 				902A44A92E4216B0008E2A43 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,7 +49,7 @@
 		902A44A92E4216B0008E2A43 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				902A44A82E4216B0008E2A43 /* Vaulkedex.app */,
+				902A44A82E4216B0008E2A43 /* Pokedex.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,9 +57,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		902A44A72E4216B0008E2A43 /* Vaulkedex */ = {
+		902A44A72E4216B0008E2A43 /* Pokedex */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 902A44B32E4216B2008E2A43 /* Build configuration list for PBXNativeTarget "Vaulkedex" */;
+			buildConfigurationList = 902A44B32E4216B2008E2A43 /* Build configuration list for PBXNativeTarget "Pokedex" */;
 			buildPhases = (
 				902A44A42E4216B0008E2A43 /* Sources */,
 				902A44A52E4216B0008E2A43 /* Frameworks */,
@@ -68,15 +70,15 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				902A44AA2E4216B0008E2A43 /* Vaulkedex */,
+				902A44AA2E4216B0008E2A43 /* App */,
 			);
-			name = Vaulkedex;
+			name = Pokedex;
 			packageProductDependencies = (
 				1D415E142E498AC50094F21C /* SVGView */,
 				1DFD86322E49EA2700600689 /* Factory */,
 			);
 			productName = Vaulkedex;
-			productReference = 902A44A82E4216B0008E2A43 /* Vaulkedex.app */;
+			productReference = 902A44A82E4216B0008E2A43 /* Pokedex.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -94,7 +96,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 902A44A32E4216B0008E2A43 /* Build configuration list for PBXProject "Vaulkedex" */;
+			buildConfigurationList = 902A44A32E4216B0008E2A43 /* Build configuration list for PBXProject "Pokedex" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -112,7 +114,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				902A44A72E4216B0008E2A43 /* Vaulkedex */,
+				902A44A72E4216B0008E2A43 /* Pokedex */,
 			);
 		};
 /* End PBXProject section */
@@ -140,6 +142,8 @@
 /* Begin XCBuildConfiguration section */
 		902A44B12E4216B2008E2A43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 902A44AA2E4216B0008E2A43 /* App */;
+			baseConfigurationReferenceRelativePath = Configurations/Debug.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -203,6 +207,8 @@
 		};
 		902A44B22E4216B2008E2A43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 902A44AA2E4216B0008E2A43 /* App */;
+			baseConfigurationReferenceRelativePath = Configurations/Release.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -259,6 +265,8 @@
 		};
 		902A44B42E4216B2008E2A43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 902A44AA2E4216B0008E2A43 /* App */;
+			baseConfigurationReferenceRelativePath = Configurations/Debug.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -266,6 +274,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pokedex-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -286,6 +295,8 @@
 		};
 		902A44B52E4216B2008E2A43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 902A44AA2E4216B0008E2A43 /* App */;
+			baseConfigurationReferenceRelativePath = Configurations/Release.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -293,6 +304,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pokedex-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,7 +326,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		902A44A32E4216B0008E2A43 /* Build configuration list for PBXProject "Vaulkedex" */ = {
+		902A44A32E4216B0008E2A43 /* Build configuration list for PBXProject "Pokedex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				902A44B12E4216B2008E2A43 /* Debug */,
@@ -323,7 +335,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		902A44B32E4216B2008E2A43 /* Build configuration list for PBXNativeTarget "Vaulkedex" */ = {
+		902A44B32E4216B2008E2A43 /* Build configuration list for PBXNativeTarget "Pokedex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				902A44B42E4216B2008E2A43 /* Debug */,
