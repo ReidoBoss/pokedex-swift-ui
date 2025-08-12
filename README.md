@@ -5,7 +5,7 @@ This project is intended **for educational purposes only**.
 
 > Created at the request of my friend **[@joebertcerezo](https://github.com/joebertcerezo)**.
 
-![Pokedex Preview](image.png)
+![Pokedex Preview](images/image.png)
 
 ---
 
@@ -25,7 +25,7 @@ This project follows the **Clean Architecture** principles by [Robert C. Martin]
 
 ### Clean Architecture Diagram
 
-![Architecture Diagram](image-1.png)
+![Architecture Diagram](images/image-1.png)
 
 ---
 
